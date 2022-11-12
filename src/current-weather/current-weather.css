@@ -1,0 +1,78 @@
+.bottom {
+  column-gap: 2em;
+}
+
+.details {
+  flex-grow: 1;
+  font-size: max(1rem, 1vw);
+  padding: 1em;
+}
+
+.parameter-label {
+  font-size: clamp(0.8rem, 1.6vw, 1rem);
+  line-height: 1.4;
+}
+
+.parameter-label:is(h4) {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  margin-bottom: 1vw;
+}
+
+.parameter-value {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+}
+
+.parameter-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top, .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top > * {
+  text-align: start;
+}
+
+.temperature {
+  display: flex;
+}
+
+.temperature:first-child {
+  font-size: clamp(2.5rem, 5vw, 5.5rem);
+}
+
+.temperature:not(:first-child) {
+  font-size: clamp(1.5rem, 3vw, 3.5rem);
+  margin-top: 12%;
+}
+
+.weather-card {
+  width: clamp(300px, 35vw, 600px);
+  border-radius: 10px;
+  box-shadow: 10px -2px 20px 2px rgba(0,0,0, 0.3);
+  color: #eee;
+  background-color: #333;
+  margin: 2em auto;
+  padding: 0.25em 1em;
+}
+
+.weather-text > * {
+  margin: 0;
+  flex-grow: 0.5;
+}
+
+.weather-text .city {
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+}
+
+.weather-text .weather-description {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+}
+
+.weather-icon {
+  width: 20%;
+}
