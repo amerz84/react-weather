@@ -36,6 +36,7 @@ const Search = ({ onSearchChange }: any) => {
       onChange={handleOnChange}
       loadOptions={loadOptions}
       className="search-wrapper"
+      classNamePrefix="search"
     />
   );
 };

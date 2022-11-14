@@ -17,8 +17,7 @@ const Forecast = ({ data }: any) => {
 
   return (
     <div>
-      <label className="forecast-title">Daily</label>
-      <button onClick={() => console.log(data.daily)}>Click</button>
+      <h2 className="forecast-title">Daily Forecast</h2>
       <Accordion allowZeroExpanded={true}>
         {data.daily.map((day: any, index: number) => {
           return (
@@ -48,18 +47,22 @@ const Forecast = ({ data }: any) => {
                 <div className="forecast-details">
                   <div className="forecast-details__item">
                     <label className="forecast-details__label">Precipitation</label>
+                    <div className="forecast-details__label-leader"></div>
                     <div className="forecast-details__value">{(data.daily[index].pop)*100}%</div>
                   </div>
                   <div className="forecast-details__item">
                     <label className="forecast-details__label">Pressure</label>
+                    <div className="forecast-details__label-leader"></div>
                     <div className="forecast-details__value">{data.daily[index].pressure} hPa</div>
                   </div>
                   <div className="forecast-details__item">
                     <label className="forecast-details__label">Humidity</label>
+                    <div className="forecast-details__label-leader"></div>
                     <div className="forecast-details__value">{data.daily[index].humidity}%</div>
                   </div>
                   <div className="forecast-details__item">
                     <label className="forecast-details__label">Windspeed</label>
+                    <div className="forecast-details__label-leader"></div>
                     <div className="forecast-details__value">{data.daily[index].wind_speed}mph</div>
                   </div>
                 </div>

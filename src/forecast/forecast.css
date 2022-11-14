@@ -12,8 +12,16 @@
   align-items: center;
 }
 
+.forecast-details__label-leader {
+  align-self: end;
+  border-bottom: 1px dotted black;
+  flex: 1;
+  margin: 0 5px;
+}
+
 .forecast-details__value {
   color: #757575;
+  font-weight: bold;
 }
 
 .forecast-item {
@@ -21,9 +29,9 @@
   border-radius: 15px;
   cursor: pointer;
   display: flex;
-  column-gap: 1em;
+  gap: 1em 1em;
   margin: 0.5em auto;
-  padding: 0.25em 2em;
+  padding: 0 2em;
   align-items: center;
 }
 
