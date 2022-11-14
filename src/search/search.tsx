@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { GEO_API_URL, geoApiOptions } from "./searchService";
+import "./search.css";
 
 const Search = ({ onSearchChange }: any) => {
   const [search, setSearch] = useState("");
@@ -12,7 +13,7 @@ const Search = ({ onSearchChange }: any) => {
 
   async function loadOptions(inputValue: any, loadedOptions: any) {
     const response = await fetch(
-      `${GEO_API_URL}/cities?minPopulation=100000&namePrefix=${inputValue}`,
+      `${GEO_API_URL}/cities?minPopulation=50000&countryIds=us&types=city&namePrefix=${inputValue}`,
       geoApiOptions
     );
     const resJSON = await response.json();
@@ -20,7 +21,7 @@ const Search = ({ onSearchChange }: any) => {
       options: resJSON.data.map((city: any) => {
         return {
           value: `${city.latitude} ${city.longitude}`,
-          label: city.name
+          label: `${city.name}, ${city.region}`
         };
       }),
       hasMore: false,
@@ -30,10 +31,11 @@ const Search = ({ onSearchChange }: any) => {
   return (
     <AsyncPaginate
       placeholder="Search for city"
-      debounceTimeout={600}
+      debounceTimeout={1000}
       value={search}
       onChange={handleOnChange}
       loadOptions={loadOptions}
+      className="search-wrapper"
     />
   );
 };

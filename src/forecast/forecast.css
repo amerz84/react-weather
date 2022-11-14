@@ -1,0 +1,50 @@
+.forecast-details {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1em 1em;
+  flex: 1 1;
+  padding: 0.5em 1em;
+}
+
+.forecast-details__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forecast-details__value {
+  color: #757575;
+}
+
+.forecast-item {
+  background-color: #f3f3f3;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  column-gap: 1em;
+  margin: 0.5em auto;
+  padding: 0.25em 2em;
+  align-items: center;
+}
+
+.forecast-item > * {
+  pointer-events: none;
+}
+
+.forecast-item__image {
+  width: max(50px, 4vw);
+}
+
+.forecast-item__day {
+  flex: 1 1;
+  font-weight: bold;
+}
+
+.forecast-item__description {
+  flex: 1 1;
+  text-align: right;
+}
+
+.forecast-item__temperatures {
+  color: #757575;
+}
