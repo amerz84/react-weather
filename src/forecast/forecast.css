@@ -14,9 +14,10 @@
 
 .forecast-details__label-leader {
   align-self: end;
-  border-bottom: 1px dotted black;
+  border-bottom: 2px dotted black;
   flex: 1;
-  margin: 0 5px;
+  margin: 0 2px;
+  padding-bottom: 2px;
 }
 
 .forecast-details__value {
