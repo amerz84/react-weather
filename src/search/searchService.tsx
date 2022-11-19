@@ -8,23 +8,18 @@ export const geoApiOptions = {
 
 export const GEO_API_URL = "https://wft-geo-db.p.rapidapi.com/v1/geo";
 
-export const City_Knoxville = {
-  city: "Knoxville",
-  state: "Tennessee",
-  lat: 35.967,
-  long: -83.95
-}
 
-export const City_Duluth = {
-  city: "Duluth",
-  state: "Minnesota",
-  lat: 46.787,
-  long: -92.10
-}
-
-export const City_McKinney = {
-  city: "McKinney",
-  state: "Texas",
-  lat: 33.2,
-  long: -96.63
-}
+export const CITY_ARRAY = [
+  {
+    city: "Knoxville",
+    state: "Tennessee",
+  },
+  {
+    city: "Duluth",
+    state: "Minnesota",
+  },
+  {
+    city: "McKinney",
+    state: "Texas",
+  }
+];

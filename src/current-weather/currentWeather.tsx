@@ -5,7 +5,7 @@ const CurrentWeather = ({ data }: any) => {
     <div className="weather-card">
       <div className="weather-card-section__top">
         <div className="weather-card-title-text">
-          <h2 className="weather-card-title-text__city">{data.city}</h2>
+          <h2 className="weather-card-title-text__city">{data.name}, {data.state}</h2>
           <p className="weather-card-title-text__description">{data.current.weather[0].main}</p>
         </div>
         <img

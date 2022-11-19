@@ -13,7 +13,7 @@ const getWeather = async () => {
 
     return await response.json();
   } catch (err: any) {
-    throw new Error(err.message);
+    console.log(err);
   }
 }  
 

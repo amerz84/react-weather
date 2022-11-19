@@ -3,22 +3,17 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import CurrentWeather from "../current-weather/currentWeather";
 import Forecast from "../forecast/forecast";
-import { City_Duluth } from "../search/searchService";
 import getWeather from "../weatherService";
 import "./tab.css";
 
 const WeatherTab = () => {
-  const [weather, setWeather] = useState(null);
+  const [weather, setWeather] = useState<any>([]);
 
   useEffect(() => {
     const getData = () => {
       getWeather()
         .then((response) => {
-          const data = response;
-          setWeather({
-            city: `${City_Duluth.city}, ${City_Duluth.state}`,
-            ...data,
-          });
+          setWeather([...response]);
         })
         .catch((err) => {
           console.log(err);
@@ -30,12 +25,26 @@ const WeatherTab = () => {
   return (
     <Tabs>
       <TabList>
-        <Tab>{City_Duluth.city}</Tab>
+        <Tab>Duluth</Tab>
+        <Tab>Knoxville</Tab>
+        <Tab>McKinney</Tab>
       </TabList>
-      <TabPanel>
-        {weather && <CurrentWeather data={weather}></CurrentWeather>}
-        {weather && <Forecast data={weather}></Forecast>}
-      </TabPanel>
+      {weather.length > 1 && (
+        <div>
+          <TabPanel>
+            <CurrentWeather data={weather[0]}></CurrentWeather>
+            <Forecast data={weather[0]}></Forecast>
+          </TabPanel>
+          <TabPanel>
+            <CurrentWeather data={weather[1]}></CurrentWeather>
+            <Forecast data={weather[1]}></Forecast>
+          </TabPanel>
+          <TabPanel>
+            <CurrentWeather data={weather[2]}></CurrentWeather>
+            <Forecast data={weather[2]}></Forecast>
+          </TabPanel>
+        </div>
+      )}
     </Tabs>
   );
 };
